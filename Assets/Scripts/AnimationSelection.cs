@@ -8,7 +8,7 @@ public class AnimationSelection : MonoBehaviour
     private void OnAnimationSelected(float _indexAnimation) 
     {
         PlayerAnimator.SetFloat("AnimationIndex", _indexAnimation);
-        SaveParams.SetAnimationValue(_indexAnimation);
+        Utils.SetAnimationValue(_indexAnimation);
     }
 
 }
