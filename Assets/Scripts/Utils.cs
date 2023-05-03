@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 public static class Utils
 {
-    private static List<Rigidbody> AffectedItemsList = new();
+    private static List<Rigidbody> AffectedItemsList = new List<Rigidbody>();
     private static Camera MainCameraReference;
     public static float     AnimationValue                  { get; private set; }
     public static Vector3   CrossHairPosition               { get; private set; }

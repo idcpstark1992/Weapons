@@ -15,7 +15,7 @@ public class FirstPersonMovement : MonoBehaviour
     {
         isRunning = canRun && Input.GetKey(runningKey);
         float targetMovingSpeed = isRunning ? runSpeed : speed;
-        Vector2 m_targetVelocity = new (Input.GetAxis("Horizontal") * targetMovingSpeed, Input.GetAxis("Vertical") * targetMovingSpeed);
+        Vector2 m_targetVelocity = new Vector2(Input.GetAxis("Horizontal") * targetMovingSpeed, Input.GetAxis("Vertical") * targetMovingSpeed);
         Rb.velocity = transform.rotation * new Vector3(m_targetVelocity.x, Rb.velocity.y, m_targetVelocity.y);
     }
 

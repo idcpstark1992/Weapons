@@ -21,7 +21,7 @@ public abstract class CannonWeapon : MonoBehaviour ,ISelectableWeapon
         Vector3 m_direction             = Utils.CrossHairPosition - TurretTransform.position;
         Vector3 m_perpDirection         = Vector3.Cross(m_direction, Vector3.up);
         Quaternion m_targetRotation     = Quaternion.LookRotation(m_direction, m_perpDirection);
-        Quaternion m_overridedRotation  = new(0f, m_targetRotation.y, 0f, m_targetRotation.w);
+        Quaternion m_overridedRotation  = new Quaternion(0f, m_targetRotation.y, 0f, m_targetRotation.w);
         TurretTransform.rotation        = Quaternion.Slerp(TurretTransform.rotation, m_overridedRotation, RotationSpeed * Time.deltaTime);
     }
     protected  virtual void ShootABullet() 

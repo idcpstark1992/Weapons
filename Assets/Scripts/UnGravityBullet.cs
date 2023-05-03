@@ -3,7 +3,7 @@ using System.Collections;
 public class UnGravityBullet : CannonBallBase
 {
     [SerializeField] private float speedReduction;
-    private readonly WaitForSeconds wfs = new(.01f);
+    private readonly WaitForSeconds wfs = new WaitForSeconds(.01f);
     public override void OnShooted(Vector3 _speed, Vector3 _initialPoint)
     {
         LocalRigidbody.position = _initialPoint;
