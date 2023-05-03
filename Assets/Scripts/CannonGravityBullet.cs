@@ -19,7 +19,6 @@ public class CannonGravityBullet : MonoBehaviour, IOnShooted
 
     private void FixedUpdate()
     {
-        Debug.Log(Utils.GravitationaBullet);
         if (Utils.GravitationaBullet)
         {
             for (int i = 0; i < Utils.EffectorsReferences().Count; i++)
