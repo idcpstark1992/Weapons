@@ -3,7 +3,7 @@
 public class CannonBallsPool : MonoBehaviour
 {
     [SerializeField] private GameObject     CannonBall;
-    [SerializeField] private IOnShooted[]    CannonBalls;
+    [SerializeField] private IOnShooted[]   CannonBalls;
     [SerializeField] private int CannonBallsAmount;
     private int CurrentCannonBallCounter;
     private void OnEnable()

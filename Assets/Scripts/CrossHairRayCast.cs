@@ -13,5 +13,6 @@ public class CrossHairRayCast : MonoBehaviour
     {
         if (Physics.Raycast(Utils.GetRayPointFromCenter(ScreenReferences), out RaycastHit hit, RaycastLenght, LayertoDetect))
             Utils.SetCrossHairPosition(hit.point);
+
     }
 }
