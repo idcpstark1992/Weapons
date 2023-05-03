@@ -6,14 +6,8 @@ public class CannonBallsPool : MonoBehaviour
     [SerializeField] private IOnShooted[]   CannonBalls;
     [SerializeField] private int CannonBallsAmount;
     private int CurrentCannonBallCounter;
-    private void OnEnable()
-    {
-        EventsHolder.ON_BULLET_FIRED += OnShootedBulled;
-    }
-    private void OnDisable()
-    {
-        EventsHolder.ON_BULLET_FIRED -= OnShootedBulled;
-    }
+    private void OnEnable()     => EventsHolder.ON_BULLET_FIRED += OnShootedBulled;
+    private void OnDisable()    => EventsHolder.ON_BULLET_FIRED -= OnShootedBulled;
     private void Start()
     {
         CannonBalls = new IOnShooted[CannonBallsAmount];

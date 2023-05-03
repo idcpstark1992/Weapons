@@ -12,10 +12,7 @@ public abstract class CannonBallBase : MonoBehaviour, IOnShooted
         InitialRotation = LocalRigidbody.rotation;
         InitialPosition = Vector3.up * 2;
     }
-    private void Start()
-    {
-        InitialPosition = LocalRigidbody.position;
-    }
+    private void Start()=> InitialPosition = LocalRigidbody.position;
     private void Update()
     {
     
@@ -31,7 +28,6 @@ public abstract class CannonBallBase : MonoBehaviour, IOnShooted
     }
     public virtual void OnShooted(Vector3 _speed, Vector3 _initialPoint)
     {
-        
         throw new System.NotImplementedException();
     }
 }

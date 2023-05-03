@@ -12,18 +12,9 @@ public abstract class CannonWeapon : MonoBehaviour ,ISelectableWeapon
     {
         var m_Observable = Observable.EveryUpdate().Where(_ => Input.GetKeyDown(KeyCode.Space)).Subscribe(_ =>ShootABullet());
     }
-    private void OnEnable()
-    {
-        EventsHolder.ON_SELECTED_WEAPON += OnChoosedWeapon;
-    }
-    private void OnDisable()
-    {
-        EventsHolder.ON_SELECTED_WEAPON -= OnChoosedWeapon;
-    }
-    private void OnChoosedWeapon()
-    {
-        ActiveWeapon = false;
-    }
+    private void OnEnable()         => EventsHolder.ON_SELECTED_WEAPON += OnChoosedWeapon;
+    private void OnDisable()        => EventsHolder.ON_SELECTED_WEAPON -= OnChoosedWeapon;
+    private void OnChoosedWeapon()  =>   ActiveWeapon = false;
     void Update() => RotateTurret();
     private void RotateTurret()
     {

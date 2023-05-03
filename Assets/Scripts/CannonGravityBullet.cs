@@ -8,14 +8,8 @@ public class CannonGravityBullet : MonoBehaviour, IOnShooted
         LocalRigidbody = GetComponent<Rigidbody>();
         DisableBullet();
     }
-    private void OnEnable()
-    {
-        EventsHolder.ON_SELECTED_WEAPON += DisableBullet;
-    }
-    private void OnDisable()
-    {
-       EventsHolder.ON_SELECTED_WEAPON -= DisableBullet;
-    }
+    private void OnEnable()=> EventsHolder.ON_SELECTED_WEAPON += DisableBullet;
+    private void OnDisable()=> EventsHolder.ON_SELECTED_WEAPON -= DisableBullet;
     private void DisableBullet()
     {
         Utils.ChangeGravitationalBulletStatus(false);

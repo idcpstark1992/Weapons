@@ -7,18 +7,9 @@ public class OnCustomWeaponHit : MonoBehaviour, ISpecialSkill
     [SerializeField] private Vector3 OffsetTransform;
     [SerializeField] private float MaxRadious;
     Vector3 m_newPosition;
-    private void OnEnable()
-    {
-        EventsHolder.ON_CUSTOM_WEAPON_MODE += SetCustomMode;
-    }
-    private void OnDisable()
-    {
-       EventsHolder.ON_CUSTOM_WEAPON_MODE -= SetCustomMode;
-    }
-    private void SetCustomMode (bool _mode)
-    {
-        Active = _mode;
-    }
+    private void OnEnable()     => EventsHolder.ON_CUSTOM_WEAPON_MODE += SetCustomMode;
+    private void OnDisable()    => EventsHolder.ON_CUSTOM_WEAPON_MODE -= SetCustomMode;
+    private void SetCustomMode (bool _mode) => Active = _mode;
     private void Start()
     {
         ObjectTransform = GetComponent<Transform>();
